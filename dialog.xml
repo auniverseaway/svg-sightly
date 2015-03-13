@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Text"
+    title="svg"
+    xtype="tabpanel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tab1
+            jcr:primaryType="cq:Panel"
+            title="Layout">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <svgUrl
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drop an SVG from the Content Finder"
+                    fieldLabel="Link To"
+                    name="./svgUrl"
+                    rootPath="/"
+                    xtype="pathfield"/>
+            </items>
+        </tab1>
+        <tab2
+            jcr:primaryType="cq:Panel"
+            title="Advanced">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <svgClass
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="SVG Class"
+                    name="./svgClass"
+                    xtype="textfield"/>
+                <svgId
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="SVG ID"
+                    name="./svgId"
+                    xtype="textfield"/>
+            </items>
+        </tab2>
+    </items>
+</jcr:root>
