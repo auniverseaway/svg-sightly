@@ -16,6 +16,19 @@
                     name="./svgUrl"
                     rootPath="/"
                     xtype="pathfield"/>
+                <inlineSvg
+                    jcr:primaryType="cq:Widget"
+                    fieldLabel="SVG Inline"
+                    name="./inlineSvg"
+                    rootPath="/"
+                    xtype="textarea"/>
+                <linkUrl
+                    jcr:primaryType="cq:Widget"
+                    fieldDescription="Drop files or pages from the Content Finder"
+                    fieldLabel="Link To"
+                    name="./linkURL"
+                    rootPath="/content"
+                    xtype="pathfield"/>
             </items>
         </tab1>
         <tab2

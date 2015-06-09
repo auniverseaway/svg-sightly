@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
-    jcr:title="svg"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+    jcr:title="SVG"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="en/cq/current/wcm/default_components.html#Carousel">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/foundation/container">
@@ -11,9 +12,9 @@
             sling:resourceType="granite/ui/components/foundation/layouts/tabs"
             type="nav"/>
         <items jcr:primaryType="nt:unstructured">
-            <layoutColumn
+            <content
                 jcr:primaryType="nt:unstructured"
-                jcr:title="Layout"
+                jcr:title="Content"
                 sling:resourceType="granite/ui/components/foundation/section">
                 <layout
                     jcr:primaryType="nt:unstructured"
@@ -30,11 +31,24 @@
                                 fieldLabel="SVG File"
                                 name="./svgUrl"
                                 rootPath="/"/>
+                            <inlineSvg
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                fieldDescription="Paste Inline SVG"
+                                fieldLabel="SVG Inline"
+                                name="./inlineSvg"
+                                rootPath="/"/>
+                            <linkURL
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                fieldLabel="Link to"
+                                name="./linkURL"
+                                rootPath="/content"/>
                         </items>
                     </column>
                 </items>
-            </layoutColumn>
-            <advancedColumn
+            </content>
+            <advanced
                 jcr:primaryType="nt:unstructured"
                 jcr:title="Advanced"
                 sling:resourceType="granite/ui/components/foundation/section">
@@ -59,7 +73,7 @@
                         </items>
                     </column>
                 </items>
-            </advancedColumn>
+            </advanced>
         </items>
     </content>
 </jcr:root>

@@ -1,2 +1,7 @@
-<img data-sly-test.svgurl="${properties.svgUrl}" src="${properties.svgUrl}" class="${properties.svgClass}" id="${properties.svgId @ context='styleToken'}"/>
-<div data-sly-test="${!svgurl}" class="cq-image-placeholder cq-placeholder file cq-dd-image" data-emptytext="SVG"></div>
+<a href="${properties.linkURL}" data-sly-unwrap="${!properties.linkURL}">
+	<img data-sly-test.svgurl="${properties.svgUrl}" src="${svgurl}" class="${properties.svgClass @ context='styleToken'}" id="${properties.svgId}"/>
+	<span data-sly-test.inlineSvg="${properties.inlineSvg}" class="${properties.svgClass @ context='styleToken'}" id="${properties.svgId}">
+		${inlineSvg @ context='unsafe'}
+	</span>
+	<div data-sly-test="${!svgurl && !inlineSvg && wcmmode.edit}" class="cq-image-placeholder cq-placeholder file cq-dd-image" data-emptytext="SVG"></div>
+</a>
