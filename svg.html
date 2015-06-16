@@ -1,21 +1,19 @@
-<sly data-sly-test.linkURL="${properties.linkURL}" data-sly-unwrap></sly>
-<a href="${linkURL}" data-sly-unwrap="${!linkURL}" class="${properties.svgClass @ context='styleToken'}" id="${properties.svgId}">
+<a data-sly-unwrap="${!properties.linkURL}"
+	href="${properties.linkURL}"
+	class="${properties.svgClass}"
+	id="${properties.svgId}">
 
-	<!--/* If we don't have a link, display the styles on the image itself. */-->
-	<sly data-sly-test="${!linkURL}" data-sly-unwrap>
-		<img data-sly-test.svgurl="${properties.svgUrl}" src="${svgurl}" class="${properties.svgClass @ context='styleToken'}" id="${properties.svgId}"/>
-		<span data-sly-test.inlineSvg="${properties.inlineSvg}" class="${properties.svgClass @ context='styleToken'}" id="${properties.svgId}">
-			${inlineSvg @ context='unsafe'}
-		</span>
-	</sly>
-	
-	<!--/* Only display the image if we do have a link. */-->
-	<sly data-sly-test="${linkURL}" data-sly-unwrap>
-		<img data-sly-test.svgurl="${properties.svgUrl}" src="${svgurl}" />
-		<span data-sly-test.inlineSvg="${properties.inlineSvg}">
-			${inlineSvg @ context='unsafe'}
-		</span>
-	</sly>
+	<img data-sly-test="${properties.svgUrl}"
+		src="${properties.svgUrl}"
+		class="${properties.linkURL && properties.svgClass}"
+		id="${properties.linkURL && properties.svgId}"/>
+	<span data-sly-test="${properties.inlineSvg}"
+		class="${properties.linkURL && properties.svgClass}"
+		id="${properties.linkURL && properties.svgId}">
+		${properties.inlineSvg @ context='unsafe'}
+	</span>
 
-	<div data-sly-test="${!svgurl && !inlineSvg && wcmmode.edit}" class="cq-image-placeholder cq-placeholder file cq-dd-image" data-emptytext="SVG"></div>
+	<div data-sly-test="${!properties.svgUrl && !properties.inlineSvg && wcmmode.edit}"
+		class="cq-image-placeholder cq-placeholder file cq-dd-image"
+		data-emptytext="SVG"></div>
 </a>
