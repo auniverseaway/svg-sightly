@@ -5,11 +5,11 @@
 
 	<img data-sly-test="${properties.svgUrl}"
 		src="${properties.svgUrl}"
-		class="${properties.linkURL && properties.svgClass}"
-		id="${properties.linkURL && properties.svgId}"/>
+		class="${properties.linkURL ? '' : properties.svgClass}"
+		id="${properties.linkURL ? '' : properties.svgId}"/>
 	<span data-sly-test="${properties.inlineSvg}"
-		class="${properties.linkURL && properties.svgClass}"
-		id="${properties.linkURL && properties.svgId}">
+		class="${properties.linkURL ? '' : properties.svgClass}"
+		id="${properties.linkURL ? '' : properties.svgId}">
 		${properties.inlineSvg @ context='unsafe'}
 	</span>
 
